@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="breadcrumb-area">
+    <div class="container">
+      <div class="breadcrumb-content">
+        <ul>
+          <li><a [routerLink]="['/']">Trang chủ</a></li>
+          <li class="active">Chi tiết sản phẩm</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="small-container single-product">
+    <div class="roww">
+      <div class="col-22">
+        <img
+          [src]="'http://localhost:3000/images/' + productForm.get('img')?.value"
+          alt="Product Image">
+        <div class="small-img-row">
+          <div class="small-img-col">
+            <img src="./assets/images/ao1.webp" alt width="100%"
+              class="small-img">
+          </div>
+          <div class="small-img-col">
+            <img src="./assets/images/ao2.webp" alt width="100%"
+              class="small-img">
+          </div>
+          <div class="small-img-col">
+            <img src="./assets/images/ao4.webp" alt width="100%"
+              class="small-img">
+          </div>
+          <div class="small-img-col">
+            <img src="./assets/images/ao3.webp" alt width="100%"
+              class="small-img">
+          </div>
+        </div>
+      </div>
+      <div class="col-22">
+        <p id="category">{{ productForm.get('category')?.value }}</p>
+        <h1 id="name">{{ productForm.get('name')?.value }}</h1>
+        <h4 id="price">{{ productForm.get('price')?.value }}VNĐ</h4>
+        <span>Size : </span>
+        <select>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <span>Số lượng: </span>
+        <input type="number" value="1">
+        <div class="bnt-cart-right">
+          <a href="./checkout.html"><button>Thêm vào giỏ hàng</button></a>
+        </div>
+        <h3>Mô tả sản phẩm: <i class="fa fa-indent"></i></h3>
+        <br>
+        <p>Còn : {{ productForm.get('quantity')?.value }} Sản phẩm</p>
+        <p id="description">{{ productForm.get('description')?.value }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="product">
+    <ul class="tab-product">
+      <a href="#">
+        <h2>Sản phẩm liên quan</h2>
+      </a>
+    </ul>
+    <div class="your-product">
+      <div class="list-products" id="showsplienquan">
+        <!-- Add related products here -->
+        <div [routerLink]="['/detail/' + product._id]" class="col-4"
+          *ngFor="let product of proRelated">
+          <div class="img-product">
+            <img [src]="'http://localhost:3000/images/' + product.img" alt>
+          </div>
+          <div class="name-product">
+            {{product.name}}
+          </div>
+          <div class="price-product">
+            {{product.price}}
+          </div>
+          <div class="btn-product">
+            <a href="#" class="view">Mua ngay</a>
+            <a href="#" class="add">Thêm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

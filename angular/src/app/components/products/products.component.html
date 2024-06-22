@@ -1,0 +1,85 @@
+<div class="breadcrumb-area">
+  <div class="container">
+    <div class="breadcrumb-content">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li class="active">Sản phẩm</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="list-product__main">
+    <div class="list-product__left">
+      <div class="list-product__left-aside">Danh mục sản phẩm</div>
+      <ul class="navbar-aside">
+        <li class="navbar-list" (click)="loadAllProducts()">
+          <a class="navbar-link">Tất cả</a>
+        </li>
+        <li class="navbar-list"
+          (click)="loadProductsByCategory('65f7f82dfc13ae6bbf510e5d')">
+          <a class="navbar-link">Áo thun</a>
+        </li>
+        <li class="navbar-list"
+          (click)="loadProductsByCategory('65f7f82dfc13ae6bbf510e5e')">
+          <a class="navbar-link">Áo Khoác</a>
+        </li>
+        <li class="navbar-list"
+          (click)="loadProductsByCategory('65f7f82dfc13ae6bbf510e60')">
+          <a class="navbar-link">Quần</a>
+        </li>
+        <li class="navbar-list"
+          (click)="loadProductsByCategory('65f7f82dfc13ae6bbf510e5f')">
+          <a class="navbar-link">Balo</a>
+        </li>
+      </ul>
+
+      <div class="list-product__left-aside">Tìm kiếm sản phẩm</div>
+      <div class="search-form"><input type="text" class="search-input"
+          placeholder="Tìm kiếm"
+          [(ngModel)]="searchQuery">
+        <button (click)="searchProducts()"
+          class="search-button"><i
+            class="fa-solid fa-magnifying-glass"></i></button></div>
+
+      <!-- <input type="text" [(ngModel)]="searchQuery"
+        placeholder="Tìm kiếm sản phẩm" />
+      <button (click)="searchProducts()">Tìm kiếm</button> -->
+    </div>
+
+    <div class="list-product__right">
+      <h2 class="title">Danh Sách Sản Phẩm</h2>
+      <div class="sort-options">
+        <label for="sort">Sắp xếp theo:</label>
+        <select id="sort" (change)="onSortChange($event)">
+          <option value>Mặc định</option>
+          <option value="asc">Giá tăng dần</option>
+          <option value="desc">Giá giảm dần</option>
+        </select>
+      </div>
+      <div class="list-products">
+        <ng-container *ngIf="products.length > 0; else noProducts">
+          <div [routerLink]="['/detail/' + product._id]" class="col-4"
+            *ngFor="let product of products">
+            <div class="img-product">
+              <img [src]="'http://localhost:3000/images/' + product.img" alt>
+            </div>
+            <div class="name-product">
+              {{product.name}}
+            </div>
+            <div class="price-product">
+              {{product.price}} VNĐ
+            </div>
+            <div class="btn-product">
+              <a href="#" class="view">Mua ngay</a>
+              <a href="#" class="add">Thêm</a>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #noProducts>
+          <div class="no-products">Không có sản phẩm phù hợp.</div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

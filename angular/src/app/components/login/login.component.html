@@ -1,0 +1,46 @@
+<div class="breadcrumb-area">
+  <div class="container">
+    <div class="breadcrumb-content">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li class="active">Đăng Nhập</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Cart -->
+
+<div class="container">
+  <div class="box">
+    <div class="login-box">
+      <div class="login-auth__login">
+        <div class="login-title">Đăng Nhập</div>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()" method="post"
+        class="login-form">
+        <input formControlName="email" type="text" placeholder="Email" />
+        <br />
+        <small
+          *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          class="text-muted">
+          <p style="color: red;">Vui lòng nhập email hợp lệ</p>
+        </small>
+
+        <input formControlName="pass" type="password" placeholder="Mật khẩu" />
+        <br />
+        <small
+          *ngIf="loginForm.get('pass')?.invalid && loginForm.get('pass')?.touched"
+          class="text-muted">
+          <p style="color: red;">Vui lòng nhập mật khẩu</p>
+        </small>
+
+        <div class="login-button">
+          <input class="bnt-cart-right" type="submit" value="Đăng Nhập" />
+          <!-- <button class="bnt-cart-right" type="submit">Đăng Nhập</button> -->
+        </div>
+      </form>
+      <p>Chưa có tài khoản đăng ký <a style="color: red;"
+          [routerLink]="['/register']">tại đây</a></p>
+    </div>
+  </div>
+</div>

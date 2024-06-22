@@ -1,0 +1,86 @@
+
+<div class="header">
+  <div class="header-top">
+    <div class="logo-header">
+      <img src="./assets/images/logo3.png" alt="logo">
+    </div>
+    <div class="row-header">
+      <div class="search-form">
+        <input type="text" class="search-input" placeholder="Tìm kiếm"
+          [(ngModel)]="searchQuery">
+        <button (click)="searchProducts()" class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="title-rigth">
+      <li><a href="#" class>
+          <i class="fa-solid fa-phone"></i>
+          <span>0880 2308</span>
+        </a></li>
+    </div>
+    <div class="title-rigth">
+      <li><a href="#" class>
+          <i class="fa-solid fa-headphones"></i>
+          <span>Tư vấn miễn phí</span>
+        </a></li>
+    </div>
+    <div class="title-rigth">
+      <li><a *ngIf="!isLogin" href="#" class>
+          <i class="fa-solid fa-headphones"></i>
+          <span>Tìm kiếm cửa hàng</span>
+        </a></li>
+    </div>
+    <div class="title-rigth">
+      <li><a *ngIf="isLogin">
+          <span>Xin chào {{isLogin.user.name}}</span>
+        </a></li>
+    </div>
+    <div class="title-rigth">
+      <li><a href="#" class *ngIf="isAdmin" [routerLink]="['admin']">
+          <i class="fa-regular fa-circle-user"></i>
+          <span>Quản trị</span>
+        </a></li>
+    </div>
+    <div class="title-right">
+
+    </div>
+
+  </div>
+  <div class="menu-header">
+    <div class="row-menu-header">
+      <div class="menu-left">
+        <li><a [routerLink]="['home']" routerLinkActive="router-link-active"
+            href><i class="fa-solid fa-house"></i>Trang chủ</a></li>
+        <li><a [routerLink]="['products']">Sản phẩm</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Bài viết</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a [routerLink]="['account']">My Account</a></li>
+      </div>
+      <div class="content-header">
+        <!-- <div class="taikhoan-header"> -->
+        <li><a *ngIf="!isLogin" [routerLink]="['login']" class="nav-link">
+            <i class="fa-solid fa-user"></i>
+            <span>Tài khoản</span>
+          </a></li>
+
+        <li><a *ngIf="isLogin" class="nav-link" (click)="onLogout()">
+            <i class="fa-solid fa-user"></i>
+            <span>Đăng Xuất</span>
+          </a>
+        </li>
+        <!-- </div> -->
+        <!-- <div class="taikhoan-header"> -->
+        <li><a href="./cart.html" class="nav-link">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Giỏ hàng</span></a>
+        </li>
+        <!-- </div> -->
+      </div>
+
+    </div>
+
+  </div>
+</div>

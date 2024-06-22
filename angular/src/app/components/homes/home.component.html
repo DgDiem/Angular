@@ -1,0 +1,576 @@
+<!-- <div class="banner">
+  <img src="./assets/images/banne.webp" alt>
+</div> -->
+<div class="section-deal">
+  <img src="./assets/images/banner2.webp" alt>
+</div>
+
+<div class="service">
+  <div class="col-service">
+    <div class="icon-service">
+      <i class="fa-solid fa-rotate-right"></i>
+    </div>
+    <div class="title-service">
+      <h5>7 ngày miễn phí trả hàng</h5>
+      <p>Cho đơn hàng bị sai sót</p>
+    </div>
+  </div>
+  <div class="col-service">
+    <div class="icon-service">
+      <i class="fa-solid fa-box-open"></i>
+    </div>
+    <div class="title-service">
+      <h5>Giao hàng tận nơi</h5>
+      <p>Đổi hàng trong vòng 7 ngày</p>
+    </div>
+  </div>
+  <div class="col-service">
+    <div class="icon-service">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <div class="title-service">
+      <h5>Hàng chính hãng 100%</h5>
+      <p>Đa dạng hình thức thanh toán</p>
+    </div>
+  </div>
+  <div class="col-service">
+    <div class="icon-service">
+      <i class="fa-solid fa-comments"></i>
+    </div>
+    <div class="title-service">
+      <h5>Tư vấn miễn phí</h5>
+      <p>Hỗ trợ tư vấn 24/7</p>
+    </div>
+  </div>
+</div>
+
+<div class="products-new">
+  <h5 class="title">SẢN PHẨM HOT NHẤT</h5>
+  <div class="list-products">
+    <div [routerLink]="['/detail/' + productHot._id]" class="col-4"
+      *ngFor="let productHot of proHot">
+      <div class="img-product">
+        <img [src]="'http://localhost:3000/images/' + productHot.img" alt>
+      </div>
+      <div class="name-product">
+        {{productHot.name}}
+      </div>
+      <div class="price-product">
+        {{productHot.price}}
+      </div>
+      <div class="btn-product">
+        <a href="#" class="view">Mua ngay</a>
+        <a href="#" class="add">Thêm</a>
+      </div>
+    </div>
+    <!-- <div class="col-4">
+          <div class="img-product">
+              <img src="./assets/images/ao2.webp" alt="">
+          </div>
+          <div class="name-product">
+              Áo thun vibas white
+          </div>
+          <div class="price-product">
+              450.000đ
+          </div>
+          <div class="btn-product">
+              <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="img-product">
+              <img src="./assets/images/ao3.webp" alt="">
+          </div>
+          <div class="name-product">
+              Áo thun vibas white
+          </div>
+          <div class="price-product">
+              450.000đ
+          </div>
+          <div class="btn-product">
+              <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="img-product">
+              <img src="./assets/images/ao4.webp" alt="">
+          </div>
+          <div class="name-product">
+              Áo thun vibas white
+          </div>
+          <div class="price-product">
+              450.000đ
+          </div>
+          <div class="btn-product">
+              <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+      </div> -->
+  </div>
+  <div class="btn-main">
+    <a href="#"><button class="btn-pri">Xem tất cả</button></a>
+  </div>
+
+</div>
+
+<div class="catalog-list">
+  <div class="col-catalog">
+    <div class="img-catalog">
+      <img src="./assets/images/img_category_1.webp" alt>
+    </div>
+    <div class="name-catalog">Áo thun</div>
+  </div>
+  <div class="col-catalog">
+    <div class="img-catalog">
+      <img src="./assets/images/img_category_2.webp" alt>
+    </div>
+    <div class="name-catalog">Áo khoác</div>
+  </div>
+  <div class="col-catalog">
+    <div class="img-catalog">
+      <img src="./assets/images/img_category_4.webp" alt>
+    </div>
+    <div class="name-catalog">Quần</div>
+  </div>
+  <div class="col-catalog">
+    <div class="img-catalog">
+      <img src="./assets/images/Balo.png" alt>
+    </div>
+    <div class="name-catalog">Balo</div>
+  </div>
+</div>
+<div class="products-new">
+  <h5 class="title">SẢN PHẨM NEW</h5>
+  <div class="list-products" id="showSpNew">
+    <div class="col-4" *ngFor="let productNew of proNew">
+      <div class="img-product">
+        <img [src]="'http://localhost:3000/images/' + productNew.img" alt>
+      </div>
+      <div class="name-product">
+        {{productNew.name}}
+      </div>
+      <div class="price-product">
+        {{productNew.price}}
+      </div>
+      <div class="btn-product">
+        <a href="#" class="view">Mua ngay</a>
+        <a href="#" class="add">Thêm</a>
+      </div>
+    </div>
+    <!-- <div class="col-4">
+          <div class="img-product">
+              <img src="./assets/images/ao2.webp" alt="">
+          </div>
+          <div class="name-product">
+              Áo thun vibas white
+          </div>
+          <div class="price-product">
+              450.000đ
+          </div>
+          <div class="btn-product">
+              <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="img-product">
+              <img src="./assets/images/ao3.webp" alt="">
+          </div>
+          <div class="name-product">
+              Áo thun vibas white
+          </div>
+          <div class="price-product">
+              450.000đ
+          </div>
+          <div class="btn-product">
+              <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="img-product">
+              <img src="./assets/images/ao4.webp" alt="">
+          </div>
+          <div class="name-product">
+              Áo thun vibas white
+          </div>
+          <div class="price-product">
+              450.000đ
+          </div>
+          <div class="btn-product">
+              <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+      </div> -->
+  </div>
+  <div class="btn-main">
+    <a href="#"><button class="btn-pri">Xem tất cả</button></a>
+  </div>
+
+</div>
+<div class="products-new">
+  <h5 class="title">SẢN PHẨM NHIỀU LƯỢT XEM</h5>
+  <div class="list-products" id="showSpView">
+    <div class="col-4" *ngFor="let productView of proView">
+      <div class="img-product">
+        <img [src]="'http://localhost:3000/images/' + productView.img" alt>
+      </div>
+      <div class="name-product">
+        {{productView.name}}
+      </div>
+      <div class="price-product">
+        {{productView.price}}
+      </div>
+      <div class="btn-product">
+        <a href="#" class="view">Mua ngay</a>
+        <a href="#" class="add">Thêm</a>
+      </div>
+    </div>
+    <!-- <div class="col-4">
+          <div class="img-product">
+              <img src="./assets/images/ao2.webp" alt="">
+          </div>
+          <div class="name-product">
+              Áo thun vibas white
+          </div>
+          <div class="price-product">
+              450.000đ
+          </div>
+          <div class="btn-product">
+              <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="img-product">
+              <img src="./assets/images/ao3.webp" alt="">
+          </div>
+          <div class="name-product">
+              Áo thun vibas white
+          </div>
+          <div class="price-product">
+              450.000đ
+          </div>
+          <div class="btn-product">
+              <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="img-product">
+              <img src="./assets/images/ao4.webp" alt="">
+          </div>
+          <div class="name-product">
+              Áo thun vibas white
+          </div>
+          <div class="price-product">
+              450.000đ
+          </div>
+          <div class="btn-product">
+              <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+      </div> -->
+  </div>
+  <div class="btn-main">
+    <a href="#"><button class="btn-pri">Xem tất cả</button></a>
+  </div>
+
+</div>
+<div class="section-deal">
+  <img src="./assets/images/banner2.webp" alt>
+</div>
+<h5 class="title">DÀNH CHO BẠN</h5>
+<div class="product">
+  <ul class="tab-product">
+    <a href="#">
+      <h5>Áo Khoác</h5>
+    </a>
+
+  </ul>
+  <div class="your-product">
+    <div class="list-products" id="showAokhoac">
+      <!-- <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/khoac4.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/khoac1.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/khoac2.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/khoac3.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div> -->
+    </div>
+    <!-- <div class="btn-main"> -->
+    <!-- <a href="#"><button class="btn-pri">Xem tất cả</button></a>
+      </div> -->
+  </div>
+</div>
+<div class="product">
+  <ul class="tab-product">
+    <a href="#">
+      <h5>Quần</h5>
+    </a>
+
+  </ul>
+  <div class="your-product">
+    <div class="list-products" id="showQuan">
+      <!-- <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/quan1.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div> -->
+      <!-- <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/quan2.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/quan3.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/quan4.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div> -->
+    </div>
+    <div class="btn-main">
+      <a href="#"><button class="btn-pri">Xem tất cả</button></a>
+    </div>
+  </div>
+</div>
+<div class="product">
+  <ul class="tab-product">
+    <a href="#">
+      <h5>Balo</h5>
+    </a>
+
+  </ul>
+  <div class="your-product">
+    <div class="list-products" id="showBalo">
+      <!-- <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/balo1.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/balo2.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/balo3.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="img-product">
+                  <img src="./assets/images/balo4.webp" alt="">
+              </div>
+              <div class="name-product">
+                  Áo thun vibas white
+              </div>
+              <div class="price-product">
+                  450.000đ
+              </div>
+              <div class="btn-product">
+                  <a href="#" class="view"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="add"><i class="fa-solid fa-bag-shopping"></i></a>
+              </div>
+          </div> -->
+    </div>
+    <div class="btn-main">
+      <a href="#"><button class="btn-pri">Xem tất cả</button></a>
+    </div>
+  </div>
+</div>
+<!-- Tin tức -->
+<h5 class="title">TIN TỨC</h5>
+<div class="news">
+  <div class="list-news">
+    <div class="col-list-news">
+      <div class="img-news">
+        <img src="./assets/images/sale.avif" alt>
+      </div>
+      <div class="tintuc-content">
+        <div class="title-news">TOTO® F/W23 COLLECTION </div>
+        <div class="date-news">23-08-2024</div>
+        <div class="text-news">Nhân dịp Thu Đông cuối năm 2023, để khích lệ sự
+          khác biệt,
+          chất riêng trong thời trang của các bạn trẻ, Levents quyết định cho ra
+          mắt
+          bộ sưu tập mới với chất lượng vượt trội và lối thiết kế tối giản,
+          hướng
+          đến thời trang bền vững. Nhờ đó, các bạn trẻ có thể thoải mái tự tin
+          chia
+          sẻ màu sắc cá nhân trong cuộc sống hằng ngày, đơn giản nhưng nổi bật
+          thông
+          qua việc mix&match các sản phẩm của Levents ở bất kỳ đâu, bất kỳ lúc
+          nào.
+
+          Xem thêm</div>
+        <div class="bnt-tintuc"><button>Đọc Thêm</button></div>
+      </div>
+    </div>
+    <div class="col-list-news">
+      <div class="tintuc-content">
+        <div class="title-news">
+          "Share your dreams, together we build a better world." </div>
+        <div class="date-news">23-08-2024</div>
+        <div class="text-news">Với khẩu hiệu
+          "Share your dreams, together we build a better world.",
+          tụi mình mong muốn được đồng hành, cổ vũ thế hệ trẻ trên hành trình
+          phát triển bản thân,
+          hướng đến một cộng đồng tích cực nơi mà mọi người có thể tự tin thể
+          hiện màu sắc cá nhân.</div>
+        <div class="bnt-tintuc"><button>Đọc Thêm</button></div>
+      </div>
+      <div class="img-news">
+        <img src="./assets/images/new3.avif" alt>
+      </div>
+    </div>
+    <div class="col-list-news">
+      <div class="img-news">
+        <img src="./assets/images/new4.avif" alt>
+      </div>
+      <div class="tintuc-content">
+        <div class="title-news">DON’T BOTHER ME I'M IN TOTO ClOSTHING®</div>
+        <div class="date-news">23-08-2024</div>
+        <div class="text-news">Bằng tất cả sự chân thành, TOTO® cám ơn bạn vì
+          đã lựa chọn sản phẩm của chúng mình để thể hiện phong cách của bản
+          thân. Chúng mình tin rằng ở từng đường kim mũi chỉ trong sản phẩm
+          sẽ dệt nên những điều không tưởng, những điều sẽ vượt qua khoảng
+          cách của các thế hệ, giới tính, biên giới… để giúp cho bạn chứng
+          minh được rằng LIFESTYLE của bạn tuyệt vời như thế nào.</div>
+        <div class="bnt-tintuc"><button>Đọc Thêm</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-main">
+    <a href="#"><button class="btn-pri">Xem tất cả</button></a>
+  </div>
+</div>

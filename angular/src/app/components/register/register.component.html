@@ -1,0 +1,60 @@
+<div class="breadcrumb-area">
+  <div class="container">
+    <div class="breadcrumb-content">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li class="active">Đăng Ký</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="box">
+    <div class="login-box">
+      <div class="login-auth__login">
+        <div class="login-title">ĐĂNG KÝ</div>
+      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()" method="post"
+        class="login-form">
+        <input formControlName="name" type="text" placeholder="Tên tài khoản" />
+        <br />
+        <small
+          *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+          class="text-muted">
+          <p style="color: red;">Tên tài khoản phải trên 6 ký tự</p>
+        </small>
+
+        <input formControlName="email" type="text" placeholder="Email" />
+        <br />
+        <small
+          *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+          class="text-muted">
+          <p style="color: red;">Vui lòng nhập email hợp lệ</p>
+        </small>
+
+        <input formControlName="phone" type="text"
+          placeholder="Số điện thoại" />
+        <br />
+        <small
+          *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched"
+          class="text-muted">
+          <p style="color: red;">Vui lòng nhập số điện thoại</p>
+        </small>
+
+        <input formControlName="pass" type="password" placeholder="Mật khẩu" />
+        <br />
+        <small
+          *ngIf="registerForm.get('pass')?.invalid && registerForm.get('pass')?.touched"
+          class="text-muted">
+          <p style="color: red;">Vui lòng nhập mật khẩu</p>
+        </small>
+
+        <div class="login-button">
+          <input class="bnt-cart-right" type="submit" value="Đăng Ký" />
+          <!-- <button class="bnt-cart-right" type="submit">Đăng Ký</button> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
